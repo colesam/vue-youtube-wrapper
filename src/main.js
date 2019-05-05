@@ -1,12 +1,17 @@
-import config from './config'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+import routes from './routes'
 import App from './App.vue'
-import YoutubeAPI from './classes/YoutubeAPI'
 import './registerServiceWorker'
 
-window.youtubeAPI = new YoutubeAPI(config.YOUTUBE_API_URL, config.YOUTUBE_API_KEY)
+Vue.use(VueRouter)
+const router = new VueRouter({
+  routes
+})
+
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')

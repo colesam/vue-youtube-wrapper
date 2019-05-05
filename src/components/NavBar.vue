@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="mb-5">
     <input
       v-model="query"
       @keyup.enter="search"
