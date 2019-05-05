@@ -15,30 +15,13 @@
 </template>
 
 <script>
-import config from '../config'
-import YoutubeAPI from '../classes/YoutubeAPI'
+import Searchable from '../components/mixins/Searchable'
 import BaseLayout from '../components/BaseLayout'
 
 export default {
-  name: 'app',
-
   components: { BaseLayout },
 
-  data() {
-    return {
-      api: null
-    }
-  },
-
-  methods: {
-    handleSearch({ query }) {
-      this.api.search(query)
-    }
-  },
-
-  beforeMount() {
-    this.api = new YoutubeAPI(config.YOUTUBE_API_URL, config.YOUTUBE_API_KEY)
-  }
+  mixins: [Searchable]
 }
 </script>
 
