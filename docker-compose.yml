@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  webserver:
+    build:
+      context: ./
+      dockerfile: webserver.docker
+    ports:
+      - "9000:80"
+    volumes:
+        - ./public:/var/www/
