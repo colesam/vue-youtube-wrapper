@@ -1,6 +1,6 @@
 <template>
   <div class="base">
-    <nav-bar @search="handleSearch" />
+    <nav-bar @search="$emit('search', $event)" />
     <slot></slot>
   </div>
 </template>
@@ -9,14 +9,7 @@
 import NavBar from '@/components/NavBar'
 
 export default {
-  components: { NavBar },
-
-  methods: {
-    handleSearch(params) {
-      console.log('handling search...')
-      this.$router.push({ name: 'list', params })
-    }
-  }
+  components: { NavBar }
 }
 </script>
 

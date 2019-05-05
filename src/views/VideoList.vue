@@ -20,7 +20,10 @@ export default {
 
   methods: {
     handleSearch({ query }) {
-      this.api.search(query)
+      this.api
+        .search(query)
+        .then(data => console.log(JSON.stringify(data)))
+        .catch(err => console.log(err))
     }
   },
 
